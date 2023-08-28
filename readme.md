@@ -2,7 +2,7 @@
 
 A Minecraft-esque game for the TI 84 CE calculator. In it you can generate natural-looking worlds, place up to 24 different kinds of blocks, keep up to 5 saves, and enjoy real-time shadow effects, transparent water, and a 10 FPS framerate!
 
- ## Check out [this video]() to see it running on real hardware, and for more implementation details.
+ ## Check out [this video](https://www.youtube.com/watch?v=Bj9CiMO66xk) to see it running on real hardware, and for more implementation details.
 
 ![Screenshot](Screenshot.png)
 
