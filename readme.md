@@ -40,7 +40,7 @@ Due to technical limitations the world format is a bit strange. Each world is co
 - WORLDA
 - WORLDA00 - WORLDA15
 
-If you want to transfer a world onto or off of your calculator, make sure you all of these files.
+If you want to transfer a world onto or off of your calculator, make sure you share all of these files.
 
 ---
 
