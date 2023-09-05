@@ -18,9 +18,9 @@ is an artifact of the emulator, and doesn't show up when running on real hardwar
 2. Download the [CE C Standard Libraries](https://github.com/CE-Programming/libraries/releases/tag/v11.2).
 3. Load both onto your calculator using the [TI Connect™ CE software](https://education.ti.com/en/products/computer-software/ti-connect-ce-sw).
 4. Run the ASM program either with `Asm(prgmBLOCKS)` or your favorite graphical shell.
-5. The world select menu should appear. Select an empty save slot and press enter to generate a new world.
+5. The main menu should appear. Then press "Play!" and the world select menu will appear. Select an empty save slot and press enter to generate a new world.
 
-**Warning:** This program takes up a lot of RAM on the calculator, and doesn't always do so gracefully. It doesn't happen very often, but in the case where you get it to crash **you will need to reset your calculator**, which will clear any unarchived data in RAM. It's best to just archive anything you wouldn't want to lose before running this. Not only does it protect that data from crashes, but it frees up more memory for the game.
+**Warning:** This program takes up a lot of RAM on the calculator, and doesn't always do so gracefully. It doesn't happen very often, but in the case where you get it to crash **you will need to reset your calculator**, which will clear any unarchived data in RAM. It's best to just archive anything you wouldn't want to lose before running this. Not only does it protect that data from crashes, but it frees up more memory for the game. Archiving the program(prgmBLOCKS) as well may be necessary to run it.
 
 ## Controls
 

@@ -335,6 +335,79 @@ void world_select() {
     }
 }
 
+void home_menu() {
+    uint8_t selection = 4;
+
+    while(true) {
+        gfx_SetDrawScreen();
+
+        gfx_SetColor(4);
+        gfx_FillRectangle(UI_BORDER, UI_BORDER, LCD_WIDTH - 2 * UI_BORDER, LCD_HEIGHT - 2 * UI_BORDER);
+
+        init_palette();
+
+        draw_block((int24_t) ( ( LCD_WIDTH - 2 * UI_BORDER ) / 2 ) + BLOCK_WIDTH / 2, (int24_t) ( LCD_HEIGHT - 2 * UI_BORDER ) / 3, (uint8_t*)textures[1]);
+
+        init_ui_palette();
+
+        gfx_SetTextFGColor(0);
+        gfx_PrintStringXY("Isometric Block Game", ( ( LCD_WIDTH - 2 * UI_BORDER ) / 2 ) - 55, ( ( LCD_HEIGHT - 2 * UI_BORDER ) / 3 ) + BLOCK_HEIGHT + 8);
+
+        gfx_SetTextFGColor(0);
+        gfx_PrintStringXY("Play!", ( LCD_WIDTH - 2 * UI_BORDER ) / 2, LCD_HEIGHT - UI_BORDER - 16 - 8 - 32);
+
+        gfx_SetTextFGColor(0);
+        gfx_PrintStringXY("Quit", ( LCD_WIDTH - 2 * UI_BORDER ) / 2, LCD_HEIGHT - UI_BORDER - 16 - 8);
+
+
+        uint8_t selection_old = selection ^ 1;
+
+        sk_key_t key;
+
+        do
+        {
+
+            if(selection != selection_old) {
+                gfx_SetColor(4);
+                gfx_Rectangle(UI_BORDER + 8, 
+                              UI_BORDER + 12 + selection_old * 32, 
+                              LCD_WIDTH - UI_BORDER - UI_BORDER - 8 - 8, 24);
+
+                gfx_SetColor(3);
+                gfx_Rectangle(UI_BORDER + 8, 
+                              UI_BORDER + 12 + selection * 32, 
+                              LCD_WIDTH - UI_BORDER - UI_BORDER - 8 - 8, 24);
+            }
+
+            selection_old = selection;
+
+            key = os_GetCSC();
+
+            switch (key)
+            {
+                case sk_Down:
+                    if(selection < SAVE_CNT)
+                        selection++;
+                    break;
+                case sk_Up:
+                    if(selection > 4)
+                        selection--;
+                    break;
+                case sk_Enter:
+                    // Break from the program when the last option (quit) is selected
+                    if(selection == SAVE_CNT) return;
+                    world_select();
+                    break;
+
+                default:
+                    break;
+            }
+
+        // Exit the inner loop every time something gets selected
+        } while (key != sk_Enter && key != sk_Del);
+    }
+}
+
 void init () {
     // Set right face textures to always to be in shadow
     for(int i = 0; i < TEX_CNT; i++) {
@@ -350,7 +423,8 @@ void init () {
 
     init_ui_palette();
 
-    world_select();
+    //world_select();
+    home_menu();
 }
 
 int main(void)
