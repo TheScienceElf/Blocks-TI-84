@@ -7,7 +7,7 @@ A Minecraft-esque game for the TI 84 CE calculator. In it you can generate natur
 ![Screenshot](Screenshot.png)
 
 Some sample gameplay captured in [CEmu](https://ce-programming.github.io/CEmu/). Note that the triangular screen-tearing
-is an artifact of the emulator, and doesn't show up when running on real hardware.
+is an artifact of the emulator, and is less noticeable when running on real hardware.
 
 
 ## Try It Yourself
